@@ -36,12 +36,11 @@ export const daySchema = z
       if (data.isAvailable) {
         return data.startTime < data.endTime;
       }
-
       return true;
     },
     {
-      message: "End time must is more than start time!",
-      path: ["endtime"],
+      message: "End time must be more than start time",
+      path: ["endTime"],
     }
   );
 
