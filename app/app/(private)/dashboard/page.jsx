@@ -103,8 +103,12 @@ const DashBoard = () => {
           >
             <div>
               <div className=" flex items-center gap-2">
-                <span>{window.location.origin}/</span>
-                <Input {...register("username")} placeholder="Ex : John Doe" />
+                <span className=" w-1/2">{window.location.origin}/</span>
+                <Input
+                  {...register("username")}
+                  placeholder="Ex : John Doe"
+                  className=" w-1/2"
+                />
               </div>
 
               {/* Error for hook form i.e to validate the username */}
