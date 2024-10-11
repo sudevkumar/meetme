@@ -6,8 +6,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -18,28 +16,40 @@ const Testimonials = () => {
       name: "Sudev Kumar",
       role: "Marketing Manager",
       content:
-        "ChronoHub has transformed how I manage my team's meetings. It's intuitive and saves us hours every week!",
-      image: "https://i.pravatar.cc/150?img=1",
+        "Honestly, can't believe this is free. it's like calendly but without making my wallet cry. Scheduling has never been so easy, and i didn’t even have to google a tutorial to figure it out. 10/10 recommend.",
+      image:
+        "https://images.unsplash.com/photo-1492447273231-0f8fecec1e3a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Gourav Sahoo",
       role: "Freelance Designer",
       content:
-        "As a freelancer, ChronoHub helps me stay organized and professional. My clients love how easy it is to book time with me.",
-      image: "https://i.pravatar.cc/150?img=2",
+        "legit, i switched in like 5 mins. super clean UI and doesn’t limit my life choices with paywalls. my meetings are organized and my life is... still a mess, but at least i’m on time now. lol",
+      image:
+        "https://images.unsplash.com/photo-1506634572416-48cdfe530110?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Sachin Nayak",
-      role: "Startup Founder",
+      role: "QA Engineer",
       content:
-        "ChronoHub streamlined our hiring process. Setting up interviews has never been easier!",
-      image: "https://i.pravatar.cc/150?img=3",
+        "bruh, free features that actually work??? no annoying ads or upsells every 2 seconds. it’s like they actually care about the user experience or something. crazy, i know ",
+      image:
+        "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Radhika Swain",
       role: "Sales Executive",
       content:
-        "I've seen a 30% increase in my meeting bookings since using ChronoHub. It's a game-changer for sales professionals.",
+        "since using chronoHub, i’ve become a master of time (well, not really, but it’s helping). no more awkward double-bookings, and my clients can actually pick times that work. revolutionary concept, right?",
+      image:
+        "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+
+    {
+      name: "Samikhya panda",
+      role: "Sales Executive",
+      content:
+        "i feel like i discovered a hack. free forever and looks good doing it. get chronoHub now before they realize it’s too good to stay free!",
       image: "",
     },
   ];
