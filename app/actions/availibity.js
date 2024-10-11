@@ -53,7 +53,7 @@ export const getUserAvailability = async () => {
   return availabilityData;
 };
 
-export async function updateAvailability(data) {
+export const updateAvailability = async (data) => {
   const { userId } = auth();
 
   if (!userId) {
@@ -110,4 +110,4 @@ export async function updateAvailability(data) {
   }
 
   return { success: true };
-}
+};

@@ -24,7 +24,7 @@ export default function Home() {
           Ready To Simplify Your Scheduling?
         </h2>
         <p className="text-xl mb-6">
-          Join Thousand Of Professionals Who Trust MeetMe For Efficient Time
+          Join Thousand Of Professionals Who Trust ChronoHub For Efficient Time
           Management.
         </p>
         <Link href={"/dashboard"}>

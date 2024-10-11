@@ -2,7 +2,7 @@ import React from "react";
 
 const HowItWorks = () => {
   const howItWorks = [
-    { step: "Sign Up", description: "Create your free MeetMe account" },
+    { step: "Sign Up", description: "Create your free ChronoHub account" },
     {
       step: "Set Availability",
       description: "Define when you're available for meetings",

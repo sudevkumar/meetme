@@ -7,7 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import CreateEvent from "@/components/component/CreateEvent";
 
 export const metadata = {
-  title: "Meet me",
+  title: "ChronoHub",
   description: "Free to meet everyone at anytime",
 };
 

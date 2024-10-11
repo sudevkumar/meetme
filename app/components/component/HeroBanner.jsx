@@ -14,7 +14,7 @@ const HeroBanner = () => {
         </h1>
 
         <p className=" text-xl text-gray-600 mb-10">
-          Meetme help you to manage your time effectively. Create events, set
+          ChronoHub help you to manage your time effectively. Create events, set
           your availability, and let others book time with you seamlessly.
         </p>
 

@@ -15,31 +15,31 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Sudev Kumar",
       role: "Marketing Manager",
       content:
-        "MeetMe has transformed how I manage my team's meetings. It's intuitive and saves us hours every week!",
+        "ChronoHub has transformed how I manage my team's meetings. It's intuitive and saves us hours every week!",
       image: "https://i.pravatar.cc/150?img=1",
     },
     {
-      name: "David Lee",
+      name: "Gourav Sahoo",
       role: "Freelance Designer",
       content:
-        "As a freelancer, MeetMe helps me stay organized and professional. My clients love how easy it is to book time with me.",
+        "As a freelancer, ChronoHub helps me stay organized and professional. My clients love how easy it is to book time with me.",
       image: "https://i.pravatar.cc/150?img=2",
     },
     {
-      name: "Emily Chen",
+      name: "Sachin Nayak",
       role: "Startup Founder",
       content:
-        "MeetMe streamlined our hiring process. Setting up interviews has never been easier!",
+        "ChronoHub streamlined our hiring process. Setting up interviews has never been easier!",
       image: "https://i.pravatar.cc/150?img=3",
     },
     {
-      name: "Michael Brown",
+      name: "Radhika Swain",
       role: "Sales Executive",
       content:
-        "I've seen a 30% increase in my meeting bookings since using MeetMe. It's a game-changer for sales professionals.",
+        "I've seen a 30% increase in my meeting bookings since using ChronoHub. It's a game-changer for sales professionals.",
       image: "",
     },
   ];

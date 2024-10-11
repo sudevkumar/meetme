@@ -18,6 +18,7 @@ import { deleteUserEvent } from "@/actions/events";
 const EventsCard = ({ event, username, isPublic = false }) => {
   const [isCopied, setCopied] = useState(false);
   const router = useRouter();
+  console.log(isPublic, "sudev");
 
   //   Handle copy link
 
@@ -47,9 +48,19 @@ const EventsCard = ({ event, username, isPublic = false }) => {
       }
     }
   };
-
+  const handleCardClick = (e) => {
+    if (e.target.tagName !== "BUTTON" && e.target.tagName !== "SVG") {
+      window?.open(
+        `${window?.location.origin}/${username}/${event.id}`,
+        "_blank"
+      );
+    }
+  };
   return (
-    <Card className=" flex flex-col justify-between cursor-pointer ">
+    <Card
+      className=" flex flex-col justify-between cursor-pointer "
+      onClick={handleCardClick}
+    >
       <CardHeader>
         <CardTitle classname=" text-2xl">{event?.title}</CardTitle>
         <CardDescription className=" w-full flex justify-between">
@@ -67,6 +78,8 @@ const EventsCard = ({ event, username, isPublic = false }) => {
             : event.description.substring(0, 70)}{" "}
         </p>
       </CardContent>
+
+      {/* !isPublic === false so it is show  */}
       {!isPublic && (
         <CardFooter className=" flex gap-2">
           <Button variant="outline" onClick={handleCopy}>

@@ -23,9 +23,42 @@ export const updateUserName = async (username) => {
     data: { username },
   });
 
-  await clerkClient.updateUser(userId, {
+  // Update username in Clerk
+  await clerkClient.users.updateUser(userId, {
     username,
   });
 
   return { success: true };
+};
+
+export const getUserByUsername = async (username) => {
+  const user = await db.user.findUnique({
+    where: { username },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      imageUrl: true,
+      events: {
+        where: {
+          isPrivate: false,
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+        select: {
+          id: true,
+          title: true,
+          description: true,
+          duration: true,
+          isPrivate: true,
+          _count: {
+            select: { bookings: true },
+          },
+        },
+      },
+    },
+  });
+
+  return user;
 };

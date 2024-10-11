@@ -1,10 +1,17 @@
 import { getUserEvent } from "@/actions/events";
 import EventsCard from "@/components/component/EventsCard";
 import { Suspense } from "react";
+import { BarLoader } from "react-spinners";
 
 export default function EventdPage() {
   return (
-    <Suspense fallback={<div>Loading Events.......</div>}>
+    <Suspense
+      fallback={
+        <div>
+          <BarLoader width="100%" color="#36d7b7" />
+        </div>
+      }
+    >
       <EventPage />
     </Suspense>
   );

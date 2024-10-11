@@ -11,9 +11,13 @@ import { usernameSchema } from "@/app/lib/validators";
 import useFetch from "@/hookos/use-fetch";
 import { updateUserName } from "@/actions/users";
 import { BarLoader } from "react-spinners";
+import { getLatestUpdates } from "@/actions/dashboard";
+import { format } from "date-fns";
 
 const DashBoard = () => {
   const { isLoaded, user } = useUser();
+
+  console.log(user, "123");
 
   // useForm
   const {
@@ -28,6 +32,11 @@ const DashBoard = () => {
   // Form handle function
 
   const { loading, error, fc: fcUpdateUserName } = useFetch(updateUserName);
+  const {
+    loading: loadingUpdates,
+    data: upcomingMeetings,
+    fc: fnUpdates,
+  } = useFetch(getLatestUpdates);
 
   const onSubmit = async (data) => {
     fcUpdateUserName(data.username);
@@ -39,6 +48,10 @@ const DashBoard = () => {
     setValue("username", user?.username);
   }, [isLoaded]);
 
+  useEffect(() => {
+    (async () => await fnUpdates())();
+  }, []);
+
   return (
     <div className=" space-y-6">
       <Card>
@@ -47,6 +60,34 @@ const DashBoard = () => {
         </CardHeader>
 
         {/* Upcoming Calls */}
+        <CardContent>
+          {!loadingUpdates ? (
+            <div className="space-y-6 font-light">
+              <div>
+                {upcomingMeetings && upcomingMeetings?.length > 0 ? (
+                  <ul className="list-disc pl-5">
+                    {upcomingMeetings?.map((meeting) => (
+                      <li key={meeting.id}>
+                        {meeting.event.title} on{" "}
+                        {format(
+                          new Date(meeting.startTime),
+                          "MMM d, yyyy h:mm a"
+                        )}{" "}
+                        with {meeting.name}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>No upcoming meetings</p>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div>
+              <BarLoader width="100%" color="#36d7b7" />
+            </div>
+          )}
+        </CardContent>
       </Card>
 
       <Card>
@@ -63,7 +104,7 @@ const DashBoard = () => {
             <div>
               <div className=" flex items-center gap-2">
                 <span>{window.location.origin}/</span>
-                <Input {...register("username")} placeholder="Ex: John_Doe" />
+                <Input {...register("username")} placeholder="Ex : John Doe" />
               </div>
 
               {/* Error for hook form i.e to validate the username */}
@@ -75,11 +116,8 @@ const DashBoard = () => {
               )}
 
               {/* Error for the API  */}
-              {errors.username && (
-                <p className=" text-red-500 text-sm mt-1">
-                  {" "}
-                  {errors.username.message}
-                </p>
+              {error && (
+                <p className="text-red-500 text-sm mt-1">{error?.message}</p>
               )}
             </div>
             {loading && (
